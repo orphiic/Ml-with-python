@@ -10,7 +10,7 @@ And how to make functions that are able to predict the outcome based on what we 
 A data set is any collection of data in the mind of a computer. It can range from an array to an entire database.
 
 An array example:
-```json
+```
 [99,86,87,88,103]
 ```
 | Bike          | Color         |age         | speed      |    feature        
@@ -47,7 +47,7 @@ The mean, mode, and median are three popular metrics of central tendency that ma
 - Median - The mid point value
 - Mode - The most common value
 For instance, we recorded the speeds of 13 bikes:
-```json
+```
 speed = [99,86,87,88,111,86,103,87,94,78,77,85,86]
 ```
 
@@ -55,7 +55,7 @@ speed = [99,86,87,88,111,86,103,87,94,78,77,85,86]
 The average value is the mean value.
 
 To determine the mean, add all of the values together and divide the total by the number of values:
-```json
+```
 (99+86+87+88+111+86+103+87+94+78+77+85+86) / 13 = 89.77
 ```
 There is a way for this in the [NumPy](https://numpy.org/) library.
