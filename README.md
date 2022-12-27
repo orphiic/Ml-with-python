@@ -11,14 +11,14 @@ A data set is any collection of data in the mind of a computer. It can range fro
 
 An array example:
 ```json
-[99,86,87,88,111]
+[99,86,87,88,103]
 ```
 | Bike          | Color         |age         | speed      |    feature        
 | ------------- | ------------- |------------- | ------------- |------------- |
 | Honda  | Red  |4  | 99  | y |         
 | Yamaha  | Blue  |7 | 86  | n  | 
-| Apache  | white  |8 | 77  | n  |
-| Beneli  | Black  |2 | 111  | y  |
+| Apache  | white  |8 | 87  | n  |
+| Beneli  | Black  |2 | 88  | y  |
 | Hero | red  |2 | 103  | n  |  
 
 We can predict the average by glancing at the array, and we can also identify the greatest and lowest values, yet what else can we do?
