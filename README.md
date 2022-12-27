@@ -55,7 +55,7 @@ speed = [99,86,87,88,111,86,103,87,94,78,77,85,86]
 The average value is the mean value.
 
 To determine the mean, add all of the values together and divide the total by the number of values:
-```
+```json
 (99+86+87+88+111+86+103+87+94+78+77+85+86) / 13 = 89.77
 ```
 There is a way for this in the [NumPy](https://numpy.org/) library.
