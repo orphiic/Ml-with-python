@@ -259,8 +259,21 @@ plot.show()
 Output:
 
 ![image](https://user-images.githubusercontent.com/67673221/209814353-b9d85c31-a559-49eb-9dbc-ae968a83ba94.png)
+## Histogram Explained
+To create a histogram with five bars, we utilize the array from the previous example.
 
+How many values in the array fall between 0 and 1 is shown by the first bar.
 
+The number of values between 1 and 2 is shown by the second bar.
+
+Etc.
+Which gives us this result:
+
+- 52 values are between 0 and 1
+- 48 values are between 1 and 2
+- 49 values are between 2 and 3
+- 51 values are between 3 and 4
+- 50 values are between 4 and 5
 
 
 
