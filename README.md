@@ -13,13 +13,7 @@ An array example:
 ```
 [99,86,87,88,103]
 ```
-| Bike          | Color         |age         | speed      |    feature        
-| ------------- | ------------- |------------- | ------------- |------------- |
-| Honda  | Red  |4  | 99  | y |         
-| Yamaha  | Blue  |7 | 86  | n  | 
-| Apache  | white  |8 | 87  | n  |
-| Beneli  | Black  |2 | 88  | y  |
-| Hero | red  |2 | 103  | n  |  
+![image](https://user-images.githubusercontent.com/67673221/209763352-bc7d0c98-05f4-40dd-b734-93d5141a37a9.png)  
 
 We can predict the average by glancing at the array, and we can also identify the greatest and lowest values, yet what else can we do?
 And we can see from the information that the most prevalent color is red and the oldest bike is 8 years old, but what if we could forecast if a bike has a feature only by looking at the other value systems?
