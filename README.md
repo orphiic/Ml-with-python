@@ -276,6 +276,137 @@ Which gives us this result:
 - 50 values are between 4 and 5
 
 
+# Multiple Regression
+Similar to linear regression, multiple regression attempts to predict a value based on two or more factors, but with more than one independent value.
+
+Look at the information set below; it includes some car-related information.
+
+[Click here for data.](https://github.com/orphiic/Ml-with-python/blob/main/data.csv "download")
+
+The size of the engine may be used to estimate a car's CO2 emissions, but multiple regression allows us to include additional factors, such as the car's weight, to improve the prediction's accuracy.
+
+We have modules in Python that will carry out the task for us. Import the Pandas module first.
+
+```python
+import Pandas
+```
+We may read CSV files using the Pandas module, which will then produce a Data Frame object.
+
+You may get the file [here](https://github.com/orphiic/Ml-with-python/blob/main/data.csv).
+```python
+df = pandas.read_csv("data.csv")
+```
+Create a list of the independent values, and then designate this list as variable X.
+
+Add the dependent values to the y variable.
+```python
+X = df[['Weight', 'Volume']]
+y = df['CO2']
+```
+Note: It is customary to use an upper case letter for the list of independent values and a lower case letter for the list of dependent values.
+
+We will import the sklearn module as well because we will utilize some of its methods:
+```python
+from sklearn import linear_model
+```
+We'll generate a linear regression object from the sklearn module using the `LinearRegression()` function.
+
+`Fit()`, a method on this object, fills the regression object with information about the connection between the independent and dependent variables as parameters:
+```python
+regr = linear_model.LinearRegression()
+regr.fit(X, y)
+```
+We now have a regression object that is prepared to forecast CO2 levels depending on the mass and volume of a car:
+```python
+#predict the CO2 emission of a car where the weight is 2300kg, and the volume is 1300cm3:
+predictedCO2 = regr.predict([[2300, 1300]])
+```
+See whole code:
+```python
+import pandas
+from sklearn import linear_model
+
+df = pandas.read_csv("data.csv")
+
+X = df[['Weight', 'Volume']]
+y = df['CO2']
+
+regr = linear_model.LinearRegression()
+regr.fit(X, y)
+
+#predict the CO2 emission of a car where the weight is 2300kg, and the volume is 1300cm3:
+predictedCO2 = regr.predict([[2300, 1300]])
+
+print(predictedCO2)
+```
+Output:`[107.2087328]`
+According to our calculations, a car with a 1.3-liter engine and a weight of 2300 kg emits around 107 grams of carbon dioxide for every kilometer driven.
+
+# Coefficient
+The coefficient is a factor that describes the relationship with an unknown variable.
+
+For instance, if x is a variable, then 2x is x multiplied by 2. The coefficient is 2, and the unknown variable is x.
+
+We can request the weight and volume coefficient values against CO2 in this situation. The response(s) we receive explain what would happen if one of the independent values was raised or lowered.
+```python
+import pandas
+from sklearn import linear_model
+
+df = pandas.read_csv("data.csv")
+
+X = df[['Weight', 'Volume']]
+y = df['CO2']
+
+regr = linear_model.LinearRegression()
+regr.fit(X, y)
+
+print(regr.coef_)
+```
+Output:`[0.00755095 0.00780526]` 
+
+## Explanation
+The weight and volume coefficient values are shown in the result array.
+
+Volume: 0.00780526 Pounds Weight: 0.00755095
+
+These numbers indicate that a weight gain of 1 kg will result in an increase in CO2 emissions of 0.00755095g.
+
+Additionally, the CO2 emission rises by 0.00780526 g for every 1 cm3 increase in engine volume.
+
+That's a good assumption, but let's put it to the test!
+
+We have previously estimated that the CO2 emission will be roughly 107g for a car with a 1300cm3 engine weighing 2300kg.
+
+What happens if we add 1000 kg to the weight?
+```python
+import pandas
+from sklearn import linear_model
+
+df = pandas.read_csv("data.csv")
+
+X = df[['Weight', 'Volume']]
+y = df['CO2']
+
+regr = linear_model.LinearRegression()
+regr.fit(X, y)
+
+predictedCO2 = regr.predict([[3300, 1300]])
+
+print(predictedCO2)
+```
+Output:`[114.75968007]`
+
+We calculated that a car with a 1.3-liter engine and a weight of 3300 kg would emit around 115 grams of carbon dioxide for every kilometer it traveled.
+
+Which demonstrates the accuracy of the coefficient of 0.00755095:
+
+107.2087328 + (1000 * 0.00755095) = 114.75968
+
+# Scale
+
+
+
+
 
              
           
